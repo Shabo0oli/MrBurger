@@ -130,7 +130,9 @@ def export(request):
     font_style = xlwt.XFStyle()
     font_style.font.bold = True
 
-    columns = [ 'Year' , 'Month' , 'Day' , 'Time', 'Sex', 'Age' ]
+    columns = [ 'Year' , 'Month' , 'Day' , 'Time', 'Sex', 'Age' , 'کیفیت محصول'  , 'کیفیت طراحی' , 'کیفیت ظاهر محصول' ,
+                'کیفیت پاسخگویی' , 'کیفیت تحویل سفارش' , 'کیفیت رفتار پرسنلی' , 'کیفیت ظاهری محیط' , 'کیفیت قیمت' ,
+                'نظر']
 
     for col_num in range(len(columns)):
         ws.write(row_num, col_num, columns[col_num], font_style)
@@ -155,6 +157,15 @@ def export(request):
         temp.append(time)
         temp.append(ans.Sex)
         temp.append(ans.Age)
+        temp.append(ans.QoProduct)
+        temp.append(ans.QoDesign)
+        temp.append(ans.QoShape)
+        temp.append(ans.QoResponse)
+        temp.append(ans.QoDelivery)
+        temp.append(ans.QoPersonality)
+        temp.append(ans.QoDecor)
+        temp.append(ans.QoAmount)
+        temp.append(ans.Comment)
         rows.append(temp)
 
 
